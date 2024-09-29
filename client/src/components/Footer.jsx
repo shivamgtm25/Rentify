@@ -1,20 +1,21 @@
 import "../styles/Footer.scss";
 import { LocationOn, LocalPhone, Email } from "@mui/icons-material";
+
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer_left">
         <a href="/">
-          <img src="/assets/house logo.png" alt="logo" />
+          <img src="/assets/house logo.png" alt="House Logo" />
         </a>
       </div>
 
       <div className="footer_center">
         <h3>Useful Links</h3>
         <ul>
-          <li>About Us</li>
-          <li>Terms and Conditions</li>
-          <li>Return and Refund Policy</li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/terms">Terms and Conditions</a></li>
+          <li><a href="/refund">Return and Refund Policy</a></li>
         </ul>
       </div>
 
@@ -22,13 +23,13 @@ const Footer = () => {
         <h3>Contact</h3>
         <div className="footer_right_info">
           <LocalPhone />
-          <p>+91-879044 7068</p>
+          <p>+91-9173378864</p>
         </div>
         <div className="footer_right_info">
           <Email />
           <p>rentify@support.com</p>
         </div>
-        <img src="/assets/payment.png" alt="payment" />
+        <img src="/assets/payment.png" alt="Payment Options" />
       </div>
     </div>
   );

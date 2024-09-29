@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const ListingSchema = new mongoose.Schema(
   {
@@ -20,7 +20,7 @@ const ListingSchema = new mongoose.Schema(
     },
     aptSuite: {
       type: String,
-      required: true,
+      required: false, // Optional field, not all addresses have apt/suite
     },
     city: {
       type: String,
@@ -51,10 +51,10 @@ const ListingSchema = new mongoose.Schema(
       required: true,
     },
     amenities: {
-      type: Array,
-      default:[]
+      type: [String], // Array of strings instead of just Array
+      default: []
     },
-    listingPhotoPaths: [{ type: String }], // Store photo URLs
+    listingPhotoPaths: [{ type: String }], // Store photo paths as an array of strings
     title: {
       type: String,
       required: true
@@ -76,8 +76,8 @@ const ListingSchema = new mongoose.Schema(
       required: true,
     }
   },
-  { timestamps: true}
-)
+  { timestamps: true }
+);
 
-const Listing = mongoose.model("Listing", ListingSchema )
-module.exports = Listing
+const Listing = mongoose.model("Listing", ListingSchema);
+module.exports = Listing;
